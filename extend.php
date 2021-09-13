@@ -19,7 +19,17 @@ return [
     ->content(function (Document $document) {
         $document->head[] = '<script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js"></script>';
         $document->foot[] = <<<HTML
-<script>flarum.core.compat.extend.extend(flarum.core.compat["components/CommentPost"].prototype,"oncreate",function(t,o){this.$("img").not(".emoji").not(".Avatar").not($(".PostMeta-ip img")).each(function(){$().ready(function(){const t=mediumZoom();t.attach("img:not(.emoji):not(.Avatar):not(.PostMeta-ip img)")})})});</script>
+<script>
+    flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'oncreate', function (output, vnode) {
+const self = this;
+this.$('img').not('.emoji').not(".Avatar").not($(".PostMeta-ip img")).each(function () {
+        $().ready(function(){
+            const zoom = mediumZoom();
+            zoom.attach('img:not(.emoji):not(.Avatar):not(.PostMeta-ip img)');
+        })
+});
+});
+</script>
 HTML;
     })
 ];
