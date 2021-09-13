@@ -21,13 +21,11 @@ return [
         $document->foot[] = <<<HTML
 <script>
     flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'oncreate', function (output, vnode) {
-const self = this;
-this.$('img').not('.emoji').not(".Avatar").not($(".PostMeta-ip img")).each(function () {
         $().ready(function(){
             const zoom = mediumZoom();
-            zoom.attach('img:not(.emoji):not(.Avatar):not(.PostMeta-ip img)');
+            zoom.attach('.Post-body img:not(.emoji):not(.Avatar):not(.PostMeta-ip img)');
         })
-});
+
 });
 </script>
 HTML;
