@@ -21,14 +21,15 @@ return [
         $document->foot[] = <<<HTML
 <script>
     flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'oncreate', function (output, vnode) {
-        $().ready(function(){
+const self = this;
+this.$('img').not('.emoji').not(".Avatar").not($(".PostMeta-ip img")).each(function () {
             const zoom = mediumZoom();
-            zoom.attach('.Post-body img:not(.emoji):not(.Avatar):not(.PostMeta-ip img)');
-        })
-
+            zoom.attach('img:not(.emoji):not(.Avatar):not(.PostMeta-ip img)');
+});
 });
 </script>
 HTML;
     })
     ->css(__DIR__.'/front.less')
+
 ];
