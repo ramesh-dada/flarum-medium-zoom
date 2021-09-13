@@ -23,15 +23,10 @@ return [
 flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'oncreate', function (output, vnode) {
 const self = this;
 this.$('img').not('.emoji').not(".Avatar").not($(".PostMeta-ip img")).each(function () {
-    try {
         $().ready(function(){
             const zoom = mediumZoom();
             zoom.attach($(this));
         })
-    } catch (e) {
-        console.error(e.name);
-        console.error(e.message);
-    }
 });
 });
 </script>
