@@ -32,4 +32,5 @@ this.$('img').not('.emoji').not(".Avatar").not($(".PostMeta-ip img")).each(funct
 </script>
 HTML;
     })
+    ->css(__DIR__.'/front.less')
 ];
