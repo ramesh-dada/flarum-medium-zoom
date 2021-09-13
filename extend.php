@@ -25,7 +25,7 @@ const self = this;
 this.$('img').not('.emoji').not(".Avatar").not($(".PostMeta-ip img")).each(function () {
         $().ready(function(){
             const zoom = mediumZoom();
-            zoom.attach('img');
+            zoom.attach('img:not(.emoji):not(.Avatar):not(.PostMeta-ip img)');
         })
 });
 });
