@@ -1,0 +1,29 @@
+{
+    "name": "ramesh-dada/flarum-medium-zoom",
+    "description": "Integrate medium-zoom into Flarum, which can provide the ability to zoom images.",
+    "keywords": [
+        "flarum"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^1.0.0"
+    },
+    "authors": [],
+    "autoload": {
+        "psr-4": {
+            "RameshDada\\MediumZoom\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Medium Zoom",
+            "category": "",
+            "icon": {
+                "name": "fas fa-image",
+                "backgroundColor": "#fff",
+                "color": "#000"
+            }
+        }
+    }
+}
